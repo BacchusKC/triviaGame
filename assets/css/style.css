@@ -1,0 +1,105 @@
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    top: 0;
+    position: relative;
+    height: 87.7%;
+    background-image: url("../images/comicsSml.jpg");
+    background-repeat: repeat;
+    /* background-position: ; */
+}
+.page {
+    min-height: 100%;
+    position: relative;
+    padding: 0;
+    margin: 0;
+}
+.header {
+    background-color: whitesmoke;
+    width: 100%;
+    height: 100px;
+    border-color: lightskyblue;
+    border-bottom: 3px;
+    border-bottom-style: solid;
+    position: relative;
+}
+.headerText {
+    text-align: center;
+    font-size: 6vh;
+    color: black;
+    /* font-weight: 600; */
+    font-family: 'CalvinO', cursive;
+    line-height: 100%;
+    vertical-align: middle;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    padding-top: 25px;
+}
+.main {
+    height: auto;
+    width: auto;
+    background-image: url("../images/newspaper.jpg");
+    background-repeat: repeat;
+    margin-top: 20px;
+    text-align: center;
+    color: black;
+    background-color: #bcbec0;
+    padding-top: 10px;
+    max-width: 500px;
+    margin-bottom: 0;
+}
+.startBox {
+    max-width: 270px!important;
+    margin-top: 200px!important;
+    padding: 50px!important;
+}
+#startButton {
+    font-family: 'CalvinN', cursive;
+    font-size: 70px;
+    cursor: pointer;
+    background-color: crimson; 
+}
+#startButton:hover {
+    background-color: darkred;
+    
+}
+.timerDisplay {
+    font-size: 40px;
+    font-family: 'CalvinN', cursive;
+}
+.timerRun {
+    max-width: 350px!important;
+    
+}
+#mainGame {
+    font-size: 30px;
+}
+.hidden {
+    display: none;
+}
+.footer {
+    position: static;
+    height: 100px;
+    /* width: 100%; */
+    background-color: whitesmoke;
+    border-top: 5px solid lightskyblue;
+    bottom:0;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.copyright {
+    color: black;
+    font-weight: 600;
+    font-family: 'CalvinN', cursive;
+    text-align: center;
+    width: 100%;
+    padding-top: 40px;
+    margin: auto;
+    font-size: 20px;
+}
+@font-face { font-family: CalvinO; src: url('CALVINO.TTF');} 
+@font-face { font-family: CalvinN; src: url('CALVINN.TTF');}
