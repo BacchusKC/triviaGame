@@ -39,7 +39,7 @@ $(document).ready(function () {
     }
     function stopTimer(){
         clearInterval(intervalId);
-        timeLimit = 30;
+        timeLimit = 20;
     }
     function countdown() {
         timeLimit--
@@ -74,13 +74,13 @@ $(document).ready(function () {
         if (userGuess == correctAnswer[currentQuestion]){
             correct++;
             $('#mainGame').html("<p class='timerDisplay'>Correct</p>");
-            $('#mainGame').html("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
+            $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
             $('#mainGame').append("<p class='answerChoices'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
             currentQuestion++;
             gameCheck();
         }else {
             $('#mainGame').html("<p class='timerDisplay'>Incorrect</p>");
-            $('#mainGame').html("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
+            $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
             $('#mainGame').append("<p class='answerChoices'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
             currentQuestion++
             gameCheck();
