@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var intervalId;
-    var timeLimit = 30;
+    var timeLimit = 20;
     var questions = ["What is the name of Jon Arbuckle's Dog?", "What comic is Bill Watterson famous for creating?", "What's the name of the girl who always pulls the football right before Charlie Brown kicks it?",
     "What are the names of the animals in <i>Get Fuzzy</i>?", "What is the only known name for Dilbert's boss?", "In a comic based underwater, the main character is a shark named:", "What is the name of the dog in <i>Peanuts</i>?",
     "What famous comic is based on a red-haired Viking?", "What is Beetle Bailey's job title?", "What famous great dane has his own comic strip?"];
@@ -34,7 +34,7 @@ $(document).ready(function () {
     }
     function timer() {
         $('#timer').removeClass("hidden");
-        $('#timer').html("<p>Time Left: 30 seconds</p>");
+        $('#timer').html("<p>Time Left: 20 seconds</p>");
         intervalId = setInterval(countdown, 1000);
     }
     function stopTimer(){
