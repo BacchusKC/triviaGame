@@ -2,6 +2,15 @@ $(document).ready(function () {
     var intervalId;
     var timeLimit = 30;
     var questions = ["What?", "Who?", "when", "where", "why"];
+    // var questionArr = [
+    //     {
+    //         name: "What?",
+    //         answers: ["a","b","C","D"],
+    //     },{
+    //         name: "who?"
+    //     }
+    // ]
+    // console.log(questionArr[currentQuestion].answers[0])
     var question0 = ["a", "b", "c", "d"];
     var question1 = ["a", "b", "c", "d"];
     var question2 = ["a", "b", "c", "d"];
@@ -9,27 +18,20 @@ $(document).ready(function () {
     var question4 = ["a", "b", "c", "d"];
     var answers = [question0, question1, question2, question3, question4];
     var correctAnswer = [1,3,3,2,1];
-    var currentQuestion = 0;
-    var answerNum = "";
+    var currentQuestion = 1;
     var userGuess = 0;
     var correct = 0;
-    var incorrect = 0;
-    var test1 = ["e","f","g","h"];
-    var test = [test1, test2, test3];
-    var test1 = ["e","f","g","h"];
-    var test2
-    var test3
 
     start();
-    answerNum = "question" + currentQuestion;
+    // answerNum = "question" + currentQuestion;
 
     // console.log(answers.question3[3]);
-    console.log(currentQuestion);
-    console.log(answerNum);
-    console.log(correctAnswer[currentQuestion]);
-    console.log(answers[currentQuestion][3]);
-    console.log(questions[2]);
-    console.log(test[0][2]);
+    // console.log(currentQuestion);
+    // console.log(answerNum);
+    // console.log(correctAnswer[currentQuestion]);
+    console.log(answers[currentQuestion][correctAnswer[currentQuestion]]);
+    // console.log(questions[2]);
+    // console.log(answers[0][2]);
     function clear() {
         $('#start').html("");
         $('#timer').html("");
@@ -73,17 +75,49 @@ $(document).ready(function () {
         $('.answerChoices').click(function() {
             userGuess = event.target.id;
             console.log(userGuess);
+            $('#mainGame').html("");
+            stopTimer();
             checkAnswer();
         });
     }
     function checkAnswer() {
         if (userGuess == correctAnswer[currentQuestion]){
-            correct++
-            
+            correct++;
+            $('#mainGame').html("<p class='timerDisplay'>Correct</p>");
+            // $('#mainGame').append("<img src='"+images[currentQuestion]+"' style='width:300px'>")
+            $('#mainGame').append("<p class='answerCorrect'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
+            currentQuestion++;
+            gameCheck();
+        }else {
+            $('#mainGame').html("<p class='timerDisplay'>Incorrect</p>");
+            // $('#mainGame').append("<img src='"+images[currentQuestion]+"' style='width:300px'>")
+            $('#mainGame').append("<p class='answerCorrect'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
+            currentQuestion++
+            gameCheck();
         }
     }
     function gameCheck() {
-
+        $('#mainGame').append("<button id='nextButton' type='button'>Next</button>")
+        $('#nextButton').click(function() {
+        if (currentQuestion == questions.length) {
+            gameEnd();
+        }else {
+            timer();
+            game();
+        }});
+    };
+    function gameEnd() {
+        $('#mainGame').html("<p>You were correct "+correct+"out of"+questions.length+"times!</p>");
+        $('#timer').html("");
+        $('#mainGame').append("<button id='nextButton' type='button'>Play Again?</button>");
+        $('#nextButton').click(function() {
+        currentQuestion = 0;
+        correct = 0;
+        incorrect = 0;
+        clear();
+        game();
+        timer();
+    });
     }
     $('#startButton').click(function() {
         $('#start').addClass("hidden");
@@ -91,10 +125,4 @@ $(document).ready(function () {
         game();
         timer();
     });
-    $('p').click(function() {
-        start();
-        userGuess = event.target.id;
-        console.log(userGuess);
-    });
-
 });
