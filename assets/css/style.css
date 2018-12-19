@@ -9,7 +9,6 @@ body {
     height: 87.7%;
     background-image: url("../images/comicsSml.jpg");
     background-repeat: repeat;
-    /* background-position: ; */
 }
 .page {
     min-height: 100%;
@@ -30,7 +29,6 @@ body {
     text-align: center;
     font-size: 6vh;
     color: black;
-    /* font-weight: 600; */
     font-family: 'CalvinO', cursive;
     line-height: 100%;
     vertical-align: middle;
@@ -44,11 +42,12 @@ body {
     width: auto;
     background-image: url("../images/newspaper.jpg");
     background-repeat: repeat;
-    margin-top: 20px;
+    margin-top: 40px;
     text-align: center;
     color: black;
     background-color: #bcbec0;
-    padding-top: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     max-width: 500px;
     margin-bottom: 0;
 }
@@ -61,22 +60,36 @@ body {
     font-family: 'CalvinN', cursive;
     font-size: 70px;
     cursor: pointer;
-    background-color: crimson; 
+    background-color: crimson;
+    border: 3px solid grey; 
 }
 #startButton:hover {
     background-color: darkred;
-    
+        
 }
-.timerDisplay {
-    font-size: 40px;
-    font-family: 'CalvinN', cursive;
-}
-.timerRun {
+#timer {
     max-width: 350px!important;
-    
+    font-size: 40px;
+    background-image: url("../images/newspaper.jpg");
+    background-repeat: repeat;
+    font-family: 'CalvinN', cursive;
+    padding-top: 13px;
+    margin-top: 20px;
+    text-align: center;
 }
 #mainGame {
     font-size: 30px;
+    font-family: 'Patrick Hand SC', cursive;
+}
+.answerChoices {
+    border: 3px solid grey;
+    margin: 20px;
+    border-radius: 15px;
+    background-color: crimson;
+}
+.answerChoices:hover {
+    cursor: pointer;
+    background-color: darkred;
 }
 .hidden {
     display: none;
@@ -84,7 +97,6 @@ body {
 .footer {
     position: static;
     height: 100px;
-    /* width: 100%; */
     background-color: whitesmoke;
     border-top: 5px solid lightskyblue;
     bottom:0;
@@ -103,3 +115,21 @@ body {
 }
 @font-face { font-family: CalvinO; src: url('CALVINO.TTF');} 
 @font-face { font-family: CalvinN; src: url('CALVINN.TTF');}
+@media only screen and (max-width: 458px){
+    .headerText {
+        padding-top: 1px;
+    }
+    .header {
+        height: 105px;
+    }
+    .main {
+        margin-top: 12px;
+    }
+    #timer {
+        margin-top: 12px;
+        font-size: 33px;
+    }
+    #mainGame {
+        font-size: 25px;
+    }
+}
