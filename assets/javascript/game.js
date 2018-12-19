@@ -7,7 +7,7 @@ $(document).ready(function () {
     var question0 = ["Spot", "Odie", "Marmaduke", "Fido", "Bacchus"];
     var question1 = ["Get Fuzzy", "Garfield","Calvin and Hobbes", "Far Side", "Marmaduke"];
     var question2 = ["Cathy", "Sally", "Marmaduke", "Lucy", "Peppermint Patty"];
-    var question3 = ["Bucky and Satchel", "Milo and Otis", "Lilo and Stich", "Bill and Ted", "Marmaduke"];
+    var question3 = ["Bucky and Satchel", "Milo and Otis", "Lilo and Stich", "Bill and Ted", "Marmaduke and Clifford"];
     var question4 = ["Harry", "Marmaduke", "The General", "Pointy-haired Boss", "Penguin"];
     var question5 = ["Marmaduke", "Sherman", "Bruce", "Jaws", "Sharky McSharkface"];
     var question6 = ["Lassie", "Odie", "Snoopy", "Marmaduke", "Bucky"];
@@ -17,7 +17,8 @@ $(document).ready(function () {
     var answers = [question0, question1, question2, question3, question4, question5, question6, question7, question8, question9];
     var images = ["odie.png", "calvin.png", "lucy.png", "fuzzy.png", "boss.png", "sherman.png", "snoopy.png", "hagar.png", "beetle.png", "marmaduke.png"];
     var correctAnswer = [1,2,3,0,3,1,2,4,0,4];
-    var currentQuestion = 0;
+    var currentQuestion = Math.floor(Math.random()*10);
+    var currentRound = 0;
     var userGuess = 0;
     var correct = 0;
 
@@ -75,23 +76,30 @@ $(document).ready(function () {
             correct++;
             $('#mainGame').html("<p class='timerDisplay'>Correct</p>");
             $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
-            $('#mainGame').append("<p class='answerChoices'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
+            $('#mainGame').append("<p class='answerEnd'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
             currentQuestion++;
+            currentRound++;
             gameCheck();
         }else {
             $('#mainGame').html("<p class='timerDisplay'>Incorrect</p>");
             $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
-            $('#mainGame').append("<p class='answerChoices'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
-            currentQuestion++
+            $('#mainGame').append("<p class='answerEnd'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
+            currentQuestion++;
+            currentRound++;
             gameCheck();
         }
     }
     function gameCheck() {
         $('#mainGame').append("<button id='startButton' style='font-size:40px' type='button'>Next</button>")
         $('#startButton').click(function() {
-        if (currentQuestion == questions.length) {
+        if (currentRound >= questions.length) {
             gameEnd();
-        }else {
+        }else if (currentQuestion >= 10) {
+            currentQuestion = 0;
+            timer();
+            game();
+        }    
+        else {
             timer();
             game();
         }});
@@ -102,7 +110,8 @@ $(document).ready(function () {
         $('#timer').addClass("hidden");
         $('#mainGame').append("<button id='startButton' type='button'>Play Again?</button>");
         $('#startButton').click(function() {
-        currentQuestion = 0;
+        currentQuestion = Math.floor(Math.random()*10);
+        currentRound = 0;
         correct = 0;
         incorrect = 0;
         clear();
