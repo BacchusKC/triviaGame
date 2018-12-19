@@ -49,7 +49,7 @@ $(document).ready(function () {
             stopTimer();
             $('#timer').html("<p style='text-align: center'>Time's Up!'</p>");
             $('#maingame').html("");
-            $('#mainGame').html("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
+            $('#mainGame').html("<img src='assets/images/"+images[currentQuestion]+"' style='height:250px'>")
             $('#mainGame').append("<p class='answerChoices'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
             currentQuestion++
             gameCheck();
@@ -75,14 +75,14 @@ $(document).ready(function () {
         if (userGuess == correctAnswer[currentQuestion]){
             correct++;
             $('#mainGame').html("<p class='timerDisplay'>Correct</p>");
-            $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
+            $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='height:250px'>")
             $('#mainGame').append("<p class='answerEnd'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
             currentQuestion++;
             currentRound++;
             gameCheck();
         }else {
             $('#mainGame').html("<p class='timerDisplay'>Incorrect</p>");
-            $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='width:250px'>")
+            $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='height:250px'>")
             $('#mainGame').append("<p class='answerEnd'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
             currentQuestion++;
             currentRound++;
