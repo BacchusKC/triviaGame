@@ -133,9 +133,10 @@ body {
 }
 @font-face { font-family: CalvinO; src: url('CALVINO.TTF');} 
 @font-face { font-family: CalvinN; src: url('CALVINN.TTF');}
-@media only screen and (max-width: 458px){
+@media only screen and (max-width: 413px){
     .headerText {
-        padding-top: 1px;
+        padding: 15px 20px;
+
     }
     .header {
         height: 105px;
@@ -149,5 +150,8 @@ body {
     }
     #mainGame {
         font-size: 25px;
+    }
+    .startBox {
+        margin-top: 200px;
     }
 }
