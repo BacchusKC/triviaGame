@@ -97,7 +97,7 @@ body {
 }
 .answerChoices:hover {
     cursor: pointer;
-    background-color: darkred;
+    /* background-color: darkred; */
 }
 .answerEnd {
     border: 3px solid grey;
@@ -151,9 +151,9 @@ body {
         margin-top: 200px;
     }
 }
-@media only screen and (max-width: 560px){
+/* @media only screen and (max-width: 560px){
     .answerChoices:hover {
         background-color: crimson!important;
         cursor: default;
     }
-}
+} */
