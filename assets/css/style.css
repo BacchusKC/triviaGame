@@ -53,9 +53,9 @@ body {
     margin-bottom: 0;
 }
 .startBox {
-    max-width: 270px!important;
-    margin-top: 200px!important;
-    padding: 50px!important;
+    max-width: 270px;
+    margin-top: 200px;
+    padding: 50px 0;
 }
 #startButton {
     font-family: 'CalvinN', cursive;
