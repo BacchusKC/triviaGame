@@ -109,7 +109,7 @@ $(document).ready(function () {
         $('#timer').html("");
         $('#timer').addClass("hidden");
         $('#mainGame').append("<button id='againButton' type='button'>Play Again?</button>");
-        $('#startButton').click(function() {
+        $('#againButton').click(function() {
         currentQuestion = Math.floor(Math.random()*10);
         currentRound = 0;
         correct = 0;
