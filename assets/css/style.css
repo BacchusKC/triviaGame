@@ -56,13 +56,24 @@ body {
     max-width: 270px;
     margin-top: 200px;
     padding: 50px 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 #startButton {
     font-family: 'CalvinN', cursive;
     font-size: 70px;
     cursor: pointer;
     background-color: crimson;
-    border: 3px solid grey; 
+    border: 3px solid grey;
+    max-width: 140px;
+    /* position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto; */
 }
 #startButton:hover {
     background-color: darkred;
