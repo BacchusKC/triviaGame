@@ -68,8 +68,8 @@ body {
     cursor: pointer;
     background-color: crimson;
     border: 3px solid grey;
-    max-width: 140px;
-    padding: 0;
+    max-width: 145px;
+    padding: 0 8px;
 }
 #startButton:hover {
     background-color: darkred;
@@ -129,9 +129,9 @@ body {
 }
 @font-face { font-family: CalvinO; src: url('CALVINO.TTF');} 
 @font-face { font-family: CalvinN; src: url('CALVINN.TTF');}
-@media only screen and (max-width: 413px){
+@media only screen and (max-width: 423px){
     .headerText {
-        padding: 15px 20px;
+        padding: 15px 25px;
 
     }
     .header {
@@ -149,5 +149,9 @@ body {
     }
     .startBox {
         margin-top: 200px;
+    }
+    .answerChoices:hover {
+        background-color: crimson;
+        cursor: default;
     }
 }
