@@ -151,7 +151,7 @@ body {
         margin-top: 200px;
     }
     .answerChoices:hover {
-        background-color: crimson;
+        background-color: crimson!important;
         cursor: default;
     }
 }
