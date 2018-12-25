@@ -69,11 +69,7 @@ body {
     background-color: crimson;
     border: 3px solid grey;
     max-width: 140px;
-    /* position: absolute;
-    left: 0;
-    right: 0;
-    margin-left: auto;
-    margin-right: auto; */
+    padding: 0;
 }
 #startButton:hover {
     background-color: darkred;
