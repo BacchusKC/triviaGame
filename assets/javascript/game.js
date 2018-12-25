@@ -108,7 +108,7 @@ $(document).ready(function () {
         $('#mainGame').html("<p>You were correct "+correct+" out of "+questions.length+" times!</p>");
         $('#timer').html("");
         $('#timer').addClass("hidden");
-        $('#mainGame').append("<button id='startButton' type='button'>Play Again?</button>");
+        $('#mainGame').append("<button id='againButton' type='button'>Play Again?</button>");
         $('#startButton').click(function() {
         currentQuestion = Math.floor(Math.random()*10);
         currentRound = 0;

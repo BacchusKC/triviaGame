@@ -72,8 +72,16 @@ body {
     padding: 0 8px;
 }
 #startButton:hover {
-    background-color: darkred;
-        
+    background-color: darkred;        
+}
+#againButton {
+    font-family: 'CalvinN', cursive;
+    font-size: 70px;
+    cursor: pointer;
+    background-color: crimson;
+    border: 3px solid grey;
+    max-width: 205px;
+    padding: 0 8px;
 }
 #timer {
     max-width: 350px!important;
@@ -97,7 +105,7 @@ body {
 }
 .answerChoices:hover {
     cursor: pointer;
-    /* background-color: darkred; */
+    background-color: darkred;
 }
 .answerEnd {
     border: 3px solid grey;
@@ -129,7 +137,7 @@ body {
 }
 @font-face { font-family: CalvinO; src: url('CALVINO.TTF');} 
 @font-face { font-family: CalvinN; src: url('CALVINN.TTF');}
-
+@media only screen and (max-width: 423px){
     .headerText {
         padding: 15px 25px;
 
@@ -151,9 +159,8 @@ body {
         margin-top: 200px;
     }
 }
-/* @media only screen and (max-width: 560px){
-    .answerChoices:hover {
-        background-color: crimson!important;
-        cursor: default;
-    }
-} */
+@media only screen and (max-width: 550px){
+.answerChoices:hover {
+    background-color: crimson!important;
+    cursor: default;
+}}
