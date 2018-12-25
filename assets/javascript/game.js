@@ -18,6 +18,7 @@ $(document).ready(function () {
     var images = ["odie.png", "calvin.png", "lucy.png", "fuzzy.png", "boss.png", "sherman.png", "snoopy.png", "hagar.png", "beetle.png", "marmaduke.png"];
     var correctAnswer = [1,2,3,0,3,1,2,4,0,4];
     var currentQuestion = Math.floor(Math.random()*10);
+    var askedQuestions = [];
     var currentRound = 0;
     var userGuess = 0;
     var correct = 0;
@@ -77,32 +78,38 @@ $(document).ready(function () {
             $('#mainGame').html("<p class='timerDisplay'>Correct</p>");
             $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='height:250px'>")
             $('#mainGame').append("<p class='answerEnd'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
-            currentQuestion++;
+            askedQuestions.push(currentQuestion);
+            currentQuestion = Math.floor(Math.random()*10);
             currentRound++;
+            $('#mainGame').append("<button id='startButton' style='font-size:40px' type='button'>Next</button>")
+            $('#startButton').click(function(){
             gameCheck();
+        });
         }else {
             $('#mainGame').html("<p class='timerDisplay'>Incorrect</p>");
             $('#mainGame').append("<img src='assets/images/"+images[currentQuestion]+"' style='height:250px'>")
             $('#mainGame').append("<p class='answerEnd'>"+answers[currentQuestion][correctAnswer[currentQuestion]]+"</p>");
-            currentQuestion++;
+            askedQuestions.push(currentQuestion);
+            currentQuestion = Math.floor(Math.random()*10);
             currentRound++;
+            $('#mainGame').append("<button id='startButton' style='font-size:40px' type='button'>Next</button>")
+            $('#startButton').click(function(){
             gameCheck();
+        });
         }
     }
     function gameCheck() {
-        $('#mainGame').append("<button id='startButton' style='font-size:40px' type='button'>Next</button>")
-        $('#startButton').click(function() {
-        if (currentRound >= questions.length) {
+        if (currentRound >= 10) {
             gameEnd();
-        }else if (currentQuestion >= 10) {
-            currentQuestion = 0;
-            timer();
-            game();
+        }
+        else if (askedQuestions.includes(currentQuestion)) {
+            currentQuestion = Math.floor(Math.random()*10);
+            gameCheck();
         }    
         else {
             timer();
             game();
-        }});
+        }
     };
     function gameEnd() {
         $('#mainGame').html("<p>You were correct "+correct+" out of "+questions.length+" times!</p>");
@@ -114,6 +121,7 @@ $(document).ready(function () {
         currentRound = 0;
         correct = 0;
         incorrect = 0;
+        askedQuestions = [];
         clear();
         game();
         timer();
